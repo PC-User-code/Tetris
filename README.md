@@ -1,0 +1,2 @@
+# Tetris
+Проект на Pygame
