@@ -14,11 +14,33 @@ class Interface(pygame.sprite.Sprite):
     def __init__(self):             #отрисовка интерфейса при игре
             super().__init__()
             self.image = pygame.Surface([width, height])
-            self.image.fill(pygame.Color("#38B2CE"))
+            self.image.fill(pygame.Color("black"))
             self.rect = self.image.get_rect()
             self.rect.x, self.rect.y = 1, 1
-            pygame.draw.line(self.image, pygame.Color("white"), (0, 0), (50, 50))
+            pygame.draw.rect(self.image, pygame.Color("#E60042"), (10, 50, tile_size, tile_size * 4), 2)       #I
 
+            pygame.draw.rect(self.image, pygame.Color("#0F4FA8"), (52, 50, tile_size * 2, tile_size * 2), 2)   #O
+
+            pygame.draw.polygon(self.image, pygame.Color("#D30068"),
+                                ((126, 50), (126 + tile_size, 50), (126 + tile_size, 50 + tile_size * 2), (126 + tile_size * 2, 50 + tile_size*2),
+                                        (126 + tile_size * 2, 50 + tile_size * 3), (126, 50 + tile_size * 3)), 2)   #L
+
+            pygame.draw.polygon(self.image, pygame.Color("#FF9F00"),
+                                ((232, 50), (232 + tile_size, 50), (232 + tile_size, 50 + tile_size * 3), (232 - tile_size, 50 + tile_size*3),
+                                        (232 - tile_size, 50 + tile_size * 2), (232, 50 + tile_size * 2)), 2)       #J
+
+            pygame.draw.polygon(self.image, pygame.Color("#FFCA90"),
+                                ((274, 50), (274 + tile_size, 50), (274 + tile_size, 50 + tile_size), (274 + tile_size * 2, 50 + tile_size),
+                                        (274 + tile_size * 2, 50 + tile_size), (274 + tile_size * 2, 50 + tile_size * 2), (274 + tile_size, 50 + tile_size * 2), (274 + tile_size, 50 + tile_size * 3), (274, 50 + tile_size * 3)), 2)# T
+
+            pygame.draw.polygon(self.image, pygame.Color("#00737E"),
+                                ((348, 50), (348 + tile_size, 50), (348 + tile_size, 50 + tile_size), (348 + tile_size * 2, 50 + tile_size),
+                                 (348 + tile_size * 2, 50 + tile_size * 3), (348 + tile_size * 2, 50 + tile_size * 3), (348 + tile_size, 50 + tile_size * 3),
+                                 (348 + tile_size, 50 + tile_size * 2), (348, 50 + tile_size * 2)), 2)  # S
+
+            pygame.draw.polygon(self.image, pygame.Color("#3F92D2"),
+                                ((454, 50), (454 + tile_size, 50), (454 + tile_size, 50 + tile_size * 2), (454, 50 + tile_size * 2), (454, 50 + tile_size * 3),
+                                 (454 - tile_size, 50 + tile_size * 3), (454 - tile_size, 50 + tile_size), (454, 50 + tile_size)), 2)  # Z
 
 if __name__ == "__main__":
     pygame.init()
